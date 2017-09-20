@@ -22,7 +22,7 @@ func main() {
 	r, w := io.Pipe()
 
 	var args = []string{}
-	if len(os.Args) > 3 {
+	if len(os.Args) > 2 {
 		args = os.Args[2:]
 	}
 
