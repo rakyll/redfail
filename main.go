@@ -11,7 +11,7 @@ import (
 	"github.com/fatih/color"
 )
 
-var red = color.New(color.FgRed)
+var highlight = color.New(color.FgHiRed)
 
 func main() {
 	if len(os.Args) < 2 {
@@ -47,7 +47,7 @@ func consume(r io.Reader) {
 			log.Fatal(err)
 		}
 		_ = line
-		red.Fprintf(os.Stderr, "%s\n", line)
+		highlight.Fprintf(os.Stderr, "%s\n", line)
 	}
 }
 
