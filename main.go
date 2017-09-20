@@ -29,7 +29,7 @@ func main() {
 
 	cmd := exec.Command(os.Args[1], args...)
 	cmd.Stderr = w
-	cmd.Stdout = os.Stdout
+	cmd.Stdout = colorable.NewColorableStdout()
 
 	go consume(r)
 
