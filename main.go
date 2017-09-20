@@ -9,6 +9,7 @@ import (
 	"os/exec"
 
 	"github.com/fatih/color"
+	"github.com/mattn/go-colorable"
 )
 
 var highlight = color.New(color.FgHiRed)
@@ -28,7 +29,7 @@ func main() {
 
 	cmd := exec.Command(os.Args[1], args...)
 	cmd.Stderr = w
-	cmd.Stdout = os.Stdout
+	cmd.Stdout = colorable.NewColorableStdout()
 
 	go consume(r)
 
@@ -38,6 +39,7 @@ func main() {
 
 func consume(r io.Reader) {
 	reader := bufio.NewReader(r)
+	stderr := colorable.NewColorableStderr()
 	for {
 		line, _, err := reader.ReadLine()
 		if err == io.EOF {
@@ -46,7 +48,7 @@ func consume(r io.Reader) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		highlight.Fprintf(os.Stderr, "%s\n", line)
+		highlight.Fprintf(stderr, "%s\n", line)
 	}
 }
 
