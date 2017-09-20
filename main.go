@@ -15,7 +15,7 @@ var red = color.New(color.FgRed)
 
 func main() {
 	if len(os.Args) < 2 {
-		usage("Missing program argument.")
+		usage("Missing target program.")
 		os.Exit(1)
 	}
 
