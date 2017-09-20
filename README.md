@@ -5,7 +5,7 @@ Simple command to colorize the stderr of a target program.
 # Installation
 
 ```
-go get github.com/rakyll/redfail
+go get -u github.com/rakyll/redfail
 ```
 
 # Usage
