@@ -46,7 +46,6 @@ func consume(r io.Reader) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		_ = line
 		highlight.Fprintf(os.Stderr, "%s\n", line)
 	}
 }
