@@ -11,7 +11,7 @@ go get github.com/rakyll/redfail
 # Usage
 
 ```
-$ redfail program arg1 arg2
+$ redfail program arg1 arg2...
 ```
 
 program's stderr will be printed in red.
